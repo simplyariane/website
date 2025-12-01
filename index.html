@@ -1,3 +1,200 @@
 <!DOCTYPE html>
-<h1>Hello!</h1>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Particles Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0b1021;
+      color: #f7f8fb;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: radial-gradient(circle at 20% 20%, rgba(88, 114, 255, 0.25), transparent 40%),
+                  radial-gradient(circle at 80% 30%, rgba(255, 99, 146, 0.2), transparent 45%),
+                  #0b1021;
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 48px 24px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(11, 16, 33, 0.85), rgba(11, 16, 33, 0.55));
+      backdrop-filter: blur(4px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #cdd5ff;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 24px;
+      max-width: 680px;
+      color: #c8cde6;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .button {
+      padding: 14px 24px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: linear-gradient(135deg, #5865f2, #7c3aed);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 12px 32px rgba(88, 101, 242, 0.35);
+      transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease, outline-color 0ms;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: #cdd5ff;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .button:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 16px 40px rgba(88, 101, 242, 0.45);
+      filter: brightness(1.02);
+    }
+
+    .button:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.85);
+      outline-offset: 3px;
+    }
+
+    footer {
+      margin-top: 48px;
+      color: #95a0c3;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    footer svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+  </style>
+</head>
+  <body>
+    <div id="particles-js"></div>
+    <noscript>
+      <div class="overlay" aria-live="polite">
+        <div class="badge">Notice</div>
+        <h1>Particles require JavaScript</h1>
+        <p>Enable JavaScript to view the animated particle background experience.</p>
+      </div>
+    </noscript>
+    <main class="overlay">
+      <div class="badge">Live Background • particles.js</div>
+    <h1>Build immersive experiences</h1>
+    <p>
+      Craft beautiful, responsive pages with animated particle backgrounds. Customize colors,
+      speed, and interactions to create engaging hero sections for your next landing page.
+    </p>
+    <div class="actions">
+      <a class="button" href="https://vincentgarreau.com/particles.js/" target="_blank" rel="noreferrer">Explore particles.js</a>
+      <a class="button secondary" href="https://github.com/VincentGarreau/particles.js" target="_blank" rel="noreferrer">View on GitHub</a>
+    </div>
+    <footer>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 17.93V18a1 1 0 0 0-2 0v1.93A8.012 8.012 0 0 1 4.07 13H6a1 1 0 0 0 0-2H4.07A8.012 8.012 0 0 1 11 4.07V6a1 1 0 0 0 2 0V4.07A8.012 8.012 0 0 1 19.93 11H18a1 1 0 0 0 0 2h1.93A8.012 8.012 0 0 1 13 19.93Z"/>
+      </svg>
+      Smooth particle motion with configurable settings.
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 120, density: { enable: true, value_area: 1200 } },
+        color: { value: ['#7c3aed', '#60a5fa', '#a78bfa'] },
+        shape: { type: 'circle' },
+        opacity: { value: 0.6, random: true, anim: { enable: true, speed: 0.8, opacity_min: 0.2, sync: false } },
+        size: { value: 4, random: true, anim: { enable: true, speed: 4, size_min: 0.2, sync: false } },
+        line_linked: { enable: true, distance: 140, color: '#7c8db5', opacity: 0.25, width: 1 },
+        move: {
+          enable: true,
+          speed: 1.6,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          attract: { enable: true, rotateX: 600, rotateY: 1200 }
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'grab' },
+          onclick: { enable: true, mode: 'push' },
+          resize: true
+        },
+        modes: {
+          grab: { distance: 180, line_linked: { opacity: 0.35 } },
+          bubble: { distance: 200, size: 8, duration: 1.5, opacity: 0.6, speed: 3 },
+          push: { particles_nb: 4 },
+          repulse: { distance: 150, duration: 0.4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
