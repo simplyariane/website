@@ -1,0 +1,19 @@
+name: Claude Fixer
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  fix:
+    if: github.event.label.name == 'agent-fix'
+    uses: simplyariane/overseer/.github/workflows/claude-fixer.reusable.yml@main
+    with:
+      fix_issue_number: ${{ github.event.issue.number }}
+      issue_body: ${{ github.event.issue.body || '' }}
+    secrets: inherit
