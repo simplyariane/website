@@ -1,0 +1,26 @@
+# Deployed to every target repo. Thin caller — all logic lives in the hub.
+# To update reviewer behavior, edit the reusable workflow in the hub repo; this file rarely changes.
+#
+# PLACEHOLDERS replaced by scripts/deploy.sh at rollout time:
+#   simplyariane  overseer  main  ariane-overseer  278158544
+
+name: Claude PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  review:
+    uses: simplyariane/overseer/.github/workflows/claude-pr-review.reusable.yml@main
+    with:
+      bot_name: ariane-overseer
+      bot_id: "278158544"
+    secrets:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      REVIEWER_BOT_PAT: ${{ secrets.REVIEWER_BOT_PAT }}
